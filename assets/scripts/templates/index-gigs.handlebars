@@ -1,0 +1,16 @@
+{{#each gigs as |gig|}}
+  <div class="gig-container animated slideInUp">
+    <div class="gig">
+      <div class="gig-title-container">
+        <h3 class="gig-title">{{gig.title}}</h3>
+      </div>
+      <div class="gig-content-container">
+        <i class="material-icons">date_range</i><span class="gig-details">{{gig.date}}</span><br>
+        <i class="material-icons">access_time</i><span class="gig-details">{{gig.time}}</span><br>
+        <i class="material-icons">place</i><span class="gig-details">{{gig.place}}</span><br>
+        <hr>
+        <p class="gig-description">{{gig.text}}</p>
+      </div>
+    </div>
+  </div>
+{{/each}}

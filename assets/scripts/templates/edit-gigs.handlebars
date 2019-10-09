@@ -1,0 +1,20 @@
+<h2 class="initLog-headers">Edit/Delete Gigs</h2>
+{{#each gigs as |gig|}}
+  <div id='gig-{{gig._id}}' class='gig-container'>
+    <div class='handlebar-gig'>
+      <form id='{{gig._id}}' class='update-gig' data-id={{gig._id}}>
+        <input class='input-gig-detail' type="text" name="gig[title]" value='{{gig.title}}'>
+        <input class='input-gig-detail' type="text" name="gig[date]" value='{{gig.date}}'>
+        <input class='input-gig-detail' type="text" name="gig[time]" value='{{gig.time}}'>
+        <input class='input-gig-detail' type="text" name="gig[place]" value='{{gig.place}}'>
+        <input class='input-gig-detail' type="text" name="gig[text]" value='{{gig.text}}'>
+        <div class="buttons">
+          <input id='edit-{{gig._id}}' type="submit" value="Edit" class="btn btn-info edit-btn">
+          <button id='btn-{{gig._id}}' class="btn btn-danger delete-btn" data-id={{gig._id}}>
+            Delete
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+{{/each}}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ava Ordman</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Do not add `link` tags-->
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <!-- Do not add `script` tags-->
+    <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+    <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    <script src="//use.edgefonts.net/euphoria-script;alice;english.js"></script>
+  </head>
+  <body class="login-background">
+    <div class="initLog">
+      <form id="sign-in">
+        <h2 class="initLog-headers">Welcome, Ava!</h2>
+          <input class="third log-field" type="text" name="credentials[email]" maxlength="40" placeholder="Username">
+          <input class="third log-field" type="password" name="credentials[password]" maxlength="40" placeholder="Password">
+          <br><input type="submit" value="Sign in" class="btn btn-info btn-block third">
+      </form>
+      <div class="justify-center">
+        <svg class="load-log disappear" viewBox="25 25 50 50">
+          <circle cx="50" cy="50" r="20"></circle>
+        </svg>
+      </div>
+    </div>
+    <section id="signInSuccess" class="disappear">
+      <div id='new-gig' class='gig-container top-edit-gig'>
+        <div>
+          <h2 class="initLog-headers">New Gig</h2>
+          <form id="create-gig">
+            <input class='input-gig-detail' type="text" name="gig[title]" placeholder="Title">
+            <input class='input-gig-detail' type="date" name="gig[date]" placeholder="Date">
+            <input class='input-gig-detail' type="text" name="gig[time]" placeholder="Time">
+            <input class='input-gig-detail' type="text" name="gig[place]" placeholder="Location">
+            <input class='input-gig-detail' type="text" name="gig[text]" placeholder="Description">
+            <input type="submit" value="Create" class="btn btn-info btn-block">
+          </form>
+        </div>
+      </div>
+      <div id="handlebar-gigs">
+      </div>
+    </section>
+  </body>
+</html>
