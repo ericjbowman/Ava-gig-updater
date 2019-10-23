@@ -89,9 +89,20 @@ const onSignIn = function (event) {
     .catch(console.log)
 }
 
+const sortByDate = function (gigs) {
+  return gigs.sort(function compareNumbers (a, b) {
+    console.log('sample time', new Date(a.date).getTime())
+    return parseInt(new Date(a.date).getTime()) - parseInt(new Date(b.date).getTime())
+  })
+}
+
+let sortedGigs
+
 const indexGigs = function () {
   api.indexGigs()
-    .then((responseData) => $('#handlebar-gigs').html(editGigs({ gigs: responseData.gigs.reverse() })))
+    .then((responseData) => { sortedGigs = sortByDate(responseData.gigs) })
+    .then(() => console.log('sorted gigs', sortedGigs))
+    .then((responseData) => $('#handlebar-gigs').html(editGigs({ gigs: sortedGigs })))
     .catch(console.log)
   $('.initLog').hide()
   $('#signInSuccess').removeClass('disappear')
